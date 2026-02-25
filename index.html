@@ -32,9 +32,11 @@
                 placeholder="What are you looking for" />
             </div>
             <div class="flex gap-10 items-center">
-              <button><i class="fas fa-filter"></i>Categories</button>
-              <button><i class="fas fa-cart-shopping"></i></button>
-              <button class="flex gap-1 items-center">
+              <button class="cursor-pointer categoriesBtn">
+                <i class="fas fa-filter"></i>Categories
+              </button>
+              <button class="cursor-pointer cartBtn"><i class="fas fa-cart-shopping"></i></button>
+              <button class="flex gap-1 items-center cursor-pointer">
                 <i class="fa-regular fa-user"></i>
                 sign in
               </button>
@@ -45,6 +47,65 @@
           </div>
         </nav>
 
+        <!-- categories section -->
+        <section
+          class="absolute w-[80vw] p-10 overflow-hidden h-0 transition-all duration-300 rounded-md top-22 bg-gradient-to-b from-orange-50 via-orange-100 to-orange-50 z-54 flex hidden categoriesContainer">
+          <article class="w-[30%]">
+            <ul class="flex flex-col gap-4 text-lg">
+              <li
+                class="flex relative items-center gap-2 cursor-pointer before:content-'' before:w-1 before:h-full before:bg-black before:flex before:rounded-md before:z-50 before:absolute before:left-[-10px] before:transition-all">
+                <i class="fa-regular fa-star"></i>Categories for you
+              </li>
+
+              <li
+                class="flex relative items-center gap-2 cursor-pointer before:content-'' before:w-1 before:h-0 hover:before:h-full before:bg-black before:flex before:rounded-md before:z-50 before:absolute before:left-[-10px] before:transition-all">
+                <i class="fa-regular fa-headphones"></i>Consumer Electronics
+              </li>
+              <li
+                class="flex relative items-center gap-2 cursor-pointer before:content-'' before:w-1 before:h-0 hover:before:h-full before:bg-black before:flex before:rounded-md before:z-50 before:absolute before:left-[-10px] before:transition-all">
+                <i class="fas fa-apple-alt"></i>Fresh Fruits
+              </li>
+            </ul>
+          </article>
+          <article class="w-full flex flex-col gap-6 scroll-smooth border-l px-6">
+            <h1 class="font-bold">Categories for you</h1>
+            <div class="flex gap-8 flex-wrap">
+              <span class="w-26 flex flex-col text-center rounded-full">
+                <img src="./images/apple.png" class="w-full rounded-full border" alt="" />
+                <p class="text-2xl">fruits</p>
+              </span>
+              <span class="w-26 flex flex-col text-center rounded-full">
+                <img src="./images/date.png" class="w-full rounded-full border" alt="" />
+                <p class="text-2xl">Dry Fruits</p>
+              </span>
+            </div>
+            <div class="flex gap-8 flex-wrap">
+              <span class="w-26 flex flex-col text-center rounded-full">
+                <img src="./images/watch.png" class="w-full rounded-full border" alt="" />
+                <p class="text-2xl">Watches</p>
+              </span>
+              <span class="w-26 flex flex-col text-center rounded-full">
+                <img src="./images/headphone.png" class="w-full rounded-full border" alt="" />
+                <p class="text-2xl">Headphones</p>
+              </span>
+            </div>
+          </article>
+        </section>
+
+        <!-- mini cart -->
+        <section
+          class="absolute w-[25vw] p-4 overflow-hidden transition-all h-0 duration-300 rounded-md top-22 right-50 bg-gradient-to-b from-orange-50 via-orange-100 to-orange-50 z-54 flex flex-col hidden miniCartContainer">
+          <h1>Shopping Cart</h1>
+          <div class="flex flex-col p-4 w-full h-full gap-2 justify-center items-center">
+            <i class="fas fa-shopping-cart text-4xl"></i>
+            <span>You cart is empty</span>
+          </div>
+          <button class="w-full py-1 rounded-full border-1 border-orange-400 text-orange-500">
+            Go to Cart
+          </button>
+        </section>
+
+        <!-- hero section -->
         <section class="w-full h-full flex justify-between">
           <article class="w-full flex flex-col gap-8 p-4 font-sans-serif">
             <h1 class="text-6xl font-bold">
@@ -61,18 +122,27 @@
                 Buy <i class="fas fa-chevron-right"></i>
               </button>
             </div>
+            <div class="w-full flex gap-16">
+              <div class="flex flex-col gap-2">
+                <span class="text-2xl font-bold">100K+</span>
+                <span class="text-xl">Customers</span>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <span class="text-2xl font-bold">405K+</span>
+                <span class="text-xl">Products</span>
+              </div>
+            </div>
           </article>
-          <article class="w-full h-full flex justify-center items-center p-8">
+          <article class="w-full h-full flex justify-center items-center relative px-14 p-8">
             <div
-              class="productHolder w-full h-full relative backdrop-blur-sm bg-red-700/30 rounded-md shadow-xl flex flex-col justify-center items-center">
-              <img
-                src="./images/apple.png"
-                alt="red fresh apple"
-                class="w-full appearDown opacity-0 product" />
-              <h1
-                class="productName px-2 appearUp opacity-0 absolute text-red-700 text-2xl cursor-pointer bottom-[-50px] before:content-'' before:w-1 before:h-full before:bg-red-700 before:flex before:rounded-md before:transition-all before:duration-700 before:absolute before:left-[-10px] before:z-[-1] hover:before:w-[110%] hover:text-white">
-                Red fresh apple
-              </h1>
+              class="productHolder w-full h-full backdrop-blur-sm bg-red-700/30 rounded-md shadow-xl flex flex-col justify-center items-center">
+              <span class="w-full">
+                <img
+                  src="./images/apple.png"
+                  alt="red fresh apple"
+                  class="w-full appearDown opacity-0 product" />
+              </span>
             </div>
           </article>
         </section>
